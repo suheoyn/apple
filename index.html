@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		사과냠냠🍎
+	</title>
+	<style>
+		body{background: url("bg1.png");
+			background-size: 100%;
+			overflow: hidden;}
+
+		.apple{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 130px;
+            scale: 70%;
+        }
+
+		#more{
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 10px 30px;
+			font-size: 20px;
+			border: none;
+			border-radius: 5px;
+			background: red;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="apple">
+	<img src="a1.png" id="a">
+	<audio src="apple.mp3" id="snd"></audio>
+	<audio src="burp.mp3" id="burp"></audio>
+	</div>
+
+	<button id="more">하나 더 먹기🍎</button>
+
+	<script>
+	//step
+
+	let step = 1;
+
+	a.onclick = function(){
+		if(step < 5){
+			
+			step++;
+			a.src = "a" + step + ".png";
+			snd.currentTime = 0;
+			snd.play();
+		}else if(step == 5){
+			
+			step = 6;
+			a.src = "a6.png";
+			burp.currentTime = 0;
+			burp.play();
+			more.style.display = "block";
+		}
+	}
+
+	more.onclick = function(){
+		
+		step = 1;
+		a.src = "a1.png";
+		more.style.display = "none";
+	}
+
+	</script>
+</body>
+</html>
